@@ -1,0 +1,37 @@
+<%- include('header.ejs'); %>
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <h2>Update Skill</h2>
+
+        <form action="/admin/skill_update_save" method="post">
+
+            <input type="hidden" name="ts_id" value="<%= skill.ts_id %>">
+
+            <label>Technology Name</label>
+            <input
+                type="text"
+                class="form-control mb-4"
+                name="tech_name"
+                value="<%= skill.tech_name %>"
+            >
+
+            <label>Technology Percentage (%)</label>
+            <input
+                type="text"
+                class="form-control mb-4"
+                name="tech_per"
+                value="<%= skill.tech_per %>"
+            >
+
+            <button class="btn btn-primary">
+                Update
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+<%- include('footer.ejs'); %>

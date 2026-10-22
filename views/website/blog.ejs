@@ -1,0 +1,25 @@
+ <%- include('header') %>
+ <section class="blog">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Blog</span>
+                <h2 class="section-title">Latest Insights</h2>
+                <p class="section-desc">Thoughts, tips, and lessons from my journey</p>
+            </div>
+            
+            <div class="blog-grid">
+                     <% for(let i=0;i<blog.length;i++){ %>
+                <article class="blog-card">
+                    <img src="/<%=blog[i].b_img%>" alt="Blog 1" />
+                    <div class="blog-content">
+                        <span class="blog-date"><%=blog[i].b_date%></span>
+                        <h3><%=blog[i].b_heading%></h3>
+                        <p><%=blog[i].b_desc%>.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <%}%>
+            </div>
+        </div>
+    </section>
+    <%- include('footer') %>

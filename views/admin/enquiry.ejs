@@ -1,0 +1,55 @@
+```ejs
+<%- include('header.ejs'); %>
+
+<!-- ===== DASHBOARD CONTENT ===== -->
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- Page Header -->
+        <div class="page-header d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="h3 mb-1">Enquiry List</h1>
+              
+            </div>
+        </div>
+
+        <!-- Blog Table -->
+        <div class="row g-4">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Subject</th>
+                            <th>Message</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% for(let i = 0; i < enquiry.length; i++) { %>
+                        <tr>
+                            <td><%= i + 1 %></td>
+                            <td><%= enquiry[i].name %></td>
+                            <td><%= enquiry[i].email %></td>
+                            <td><%= enquiry[i].subject%></td>
+                            <td><%= enquiry[i].message%></td>
+                            <td>
+                                <a href="/admin/enquiry_delete/<%=enquiry[i].eid %>" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<%- include('footer.ejs'); %>
+```

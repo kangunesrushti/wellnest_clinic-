@@ -1,0 +1,47 @@
+<%- include('header.ejs'); %>
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="page-header">
+            <h1 class="h3 mb-3">Update Education</h1>
+        </div>
+
+        <form action="/admin/education_update_save" method="post">
+
+            <input type="hidden" name="eid" value="<%= education.eid %>">
+
+            <label>Education Year</label>
+            <input
+                type="text"
+                class="form-control mb-3"
+                name="edu_year"
+                value="<%= education.edu_year %>"
+            >
+
+            <label>Degree</label>
+            <input
+                type="text"
+                class="form-control mb-3"
+                name="edu_position"
+                value="<%= education.edu_position %>"
+            >
+
+            <label>University</label>
+            <input
+                type="text"
+                class="form-control mb-3"
+                name="edu_company"
+                value="<%= education.edu_company %>"
+            >
+
+            <button class="btn btn-primary">
+                Update
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+<%- include('footer.ejs'); %>

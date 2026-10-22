@@ -1,0 +1,75 @@
+<%- include('header.ejs'); %>
+
+<!-- ===== DASHBOARD CONTENT ===== -->
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- Page Header -->
+        <div class="page-header d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="h3 mb-1">Update Blog</h1>
+                <p class="text-muted small mb-0">Update blog details</p>
+            </div>
+        </div>
+
+        <!-- Update Form -->
+        <div class="row g-4">
+            <div class="col-12">
+
+                <form action="/admin/blog_update_save" method="post" enctype="multipart/form-data">
+
+                    <input type="hidden" name="bid" value="<%= blog.bid %>">
+                    <input type="hidden" name="old_img" value="<%= blog.b_img %>">
+
+                    <label>Blog Heading</label>
+                    <input
+                        type="text"
+                        class="form-control mb-4"
+                        name="b_heading"
+                        value="<%= blog.b_heading %>"
+                    >
+
+                    <label>Blog Description</label>
+                    <textarea
+                        class="form-control mb-4"
+                        name="b_desc"
+                        rows="5"
+                    ><%= blog.b_desc %></textarea>
+
+                    <label>Date</label>
+                    <input
+                        type="date"
+                        class="form-control mb-4"
+                        name="b_date"
+                        value="<%= blog.b_date %>"
+                    >
+
+                    <label>Current Image</label><br>
+
+                    <img
+                        src="/<%= blog.b_img %>"
+                        width="120"
+                        height="80"
+                        class="mb-3"
+                    >
+
+                    <label>Change Image</label>
+                    <input
+                        type="file"
+                        class="form-control mb-4"
+                        name="b_img"
+                    >
+
+                    <button class="btn btn-primary">
+                        Update
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<%- include('footer.ejs'); %>

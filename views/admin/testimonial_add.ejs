@@ -1,0 +1,51 @@
+<%- include('header.ejs'); %>
+
+            <!-- ===== DASHBOARD CONTENT ===== -->
+            <div class="page-content">
+                <div class="container-fluid">
+                    <!-- Page Header -->
+                    <div class="page-header d-flex justify-content-between align-items-center">
+                        <div>
+                            <h1 class="h3 mb-1">Add Testimonials</h1>
+                            <p class="text-muted small mb-0">Welcome back, Admin! Here's your overview</p>
+                        </div>
+                        
+                    </div>
+
+                   
+                    <!-- star cards  -->
+                     <div class="row g-4  ">
+                        <div class="col-12">
+                                                
+                        <form action="/admin/testimonial_add_save" method="post" enctype="multipart/form-data">
+
+                            <label>Name</label>
+                            <input type="text" class="form-control mb-4" name="name">
+
+                            <label>Designation</label>
+                            <input type="text" class="form-control mb-4" name="designation">
+
+                            <label>Company</label>
+                            <input type="text" class="form-control mb-4" name="company">
+
+                            <label>Description</label>
+                            <textarea class="form-control mb-4" name="description" rows="4"></textarea>
+
+                            <label>Rating</label>
+                            <input type="number" class="form-control mb-4" name="rating" min="1" max="5">
+
+                            <label>Image</label>
+                            <input type="file" class="form-control mb-4" name="img">
+
+                            <button class="btn btn-primary">Save</button>
+
+                        </form>
+
+
+                        </div>
+
+                     </div>
+                   
+                </div>
+            </div>
+          <%- include('footer.ejs'); %>

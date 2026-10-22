@@ -1,0 +1,54 @@
+<%- include('header.ejs'); %>
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="page-header">
+            <h1 class="h3 mb-3">Update Experience</h1>
+        </div>
+
+        <form action="/admin/experience_update_save" method="post">
+
+            <input type="hidden" name="eid" value="<%= experience.eid %>">
+
+            <label>Experience Year</label>
+            <input
+                type="text"
+                class="form-control mb-3"
+                name="exp_year"
+                value="<%= experience.exp_year %>"
+            >
+
+            <label>Experience Position</label>
+            <input
+                type="text"
+                class="form-control mb-3"
+                name="exp_position"
+                value="<%= experience.exp_position %>"
+            >
+
+            <label>Company Name</label>
+            <input
+                type="text"
+                class="form-control mb-3"
+                name="exp_company"
+                value="<%= experience.exp_company %>"
+            >
+
+            <label>Experience Description</label>
+            <textarea
+                class="form-control mb-3"
+                name="exp_desc"
+                rows="4"
+            ><%= experience.exp_desc %></textarea>
+
+            <button class="btn btn-primary">
+                Update
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+<%- include('footer.ejs'); %>

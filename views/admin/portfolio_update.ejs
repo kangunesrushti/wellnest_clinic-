@@ -1,0 +1,58 @@
+<%- include('header.ejs'); %>
+
+<!-- ===== DASHBOARD CONTENT ===== -->
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="page-header d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="h3 mb-1">Update Portfolio</h1>
+                <p class="text-muted small mb-0">Update portfolio details</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-12">
+
+                <form action="/admin/portfolio_update_save" method="post" enctype="multipart/form-data">
+
+                    <input type="hidden" name="pid" value="<%= portfolio.pid %>">
+                    <input type="hidden" name="old_img" value="<%= portfolio.img %>">
+
+                    <label>Portfolio Name</label>
+                    <input
+                        type="text"
+                        class="form-control mb-4"
+                        name="p_name"
+                        value="<%= portfolio.p_name %>"
+                    >
+
+                    <label>Current Image</label><br>
+
+                    <img
+                        src="/<%= portfolio.img %>"
+                        width="120"
+                        height="100"
+                        class="mb-3"
+                    >
+
+                    <label>Change Image</label>
+                    <input
+                        type="file"
+                        class="form-control mb-4"
+                        name="p_img"
+                    >
+
+                    <button class="btn btn-primary">
+                        Update
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<%- include('footer.ejs'); %>

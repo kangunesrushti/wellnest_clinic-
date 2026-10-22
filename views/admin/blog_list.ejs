@@ -1,0 +1,65 @@
+```ejs
+<%- include('header.ejs'); %>
+
+<!-- ===== DASHBOARD CONTENT ===== -->
+<div class="page-content">
+    <div class="container-fluid">
+
+        <!-- Page Header -->
+        <div class="page-header d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="h3 mb-1">Blog List</h1>
+                <p class="text-muted small mb-0">Manage all blog posts</p>
+            </div>
+
+            <a href="/admin/blog_add" class="btn btn-primary">
+                <i class="fa fa-plus"></i> Add Blog
+            </a>
+        </div>
+
+        <!-- Blog Table -->
+        <div class="row g-4">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Heading</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                            <th>Image</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% for(let i = 0; i < blog.length; i++) { %>
+                        <tr>
+                            <td><%= i + 1 %></td>
+                            <td><%= blog[i].b_heading %></td>
+                            <td><%= blog[i].b_desc %></td>
+                            <td><%= blog[i].b_date %></td>
+                            <td>
+                                <img src="/<%= blog[i].b_img %>" width="80" height="60">
+                            </td>
+                            <td>
+                                <a href="/admin/blog_update/<%= blog[i].bid %>"   class="btn btn-warning btn-sm">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+
+                                <a href="/admin/blog_delete/<%=blog[i].bid%>" class="btn btn-danger btn-sm">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<%- include('footer.ejs'); %>
+```

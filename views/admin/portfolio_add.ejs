@@ -1,0 +1,33 @@
+<%- include('header.ejs'); %>
+
+            <!-- ===== DASHBOARD CONTENT ===== -->
+            <div class="page-content">
+                <div class="container-fluid">
+                    <!-- Page Header -->
+                    <div class="page-header d-flex justify-content-between align-items-center">
+                        <div>
+                            <h1 class="h3 mb-1">Add Portfolio</h1>
+                            <p class="text-muted small mb-0">Welcome back, Admin! Here's your overview</p>
+                        </div>
+                        
+                    </div>
+
+                   
+                    <!-- star cards  -->
+                     <div class="row g-4  ">
+                        <div class="col-12">
+                            <form action="/admin/portfolio_add_save" method="post" enctype="multipart/form-data">
+                                <label for="">Portfolio Name</label>
+                                <input type="text" class="form-control mb-4" name="p_name" id="">
+                            
+                                <label for="">Portfolio Image</label>
+                                <input type="file" class="form-control mb-4" name="p_img">
+                                <button class="btn btn-primary">Save</button>
+                            </form> 
+                        </div>
+
+                     </div>
+                   
+                </div>
+            </div>
+          <%- include('footer.ejs'); %>

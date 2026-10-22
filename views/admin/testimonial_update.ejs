@@ -1,0 +1,43 @@
+<%- include('header.ejs'); %>
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="page-header">
+            <h1 class="h3 mb-3">Update Testimonial</h1>
+        </div>
+
+        <form action="/admin/testimonial_update_save" method="post" enctype="multipart/form-data">
+
+            <input type="hidden" name="id" value="<%= testimonial.id %>">
+            <input type="hidden" name="old_img" value="<%= testimonial.img %>">
+
+            <label>Name</label>
+            <input type="text" class="form-control mb-3" name="name" value="<%= testimonial.name %>">
+
+            <label>Designation</label>
+            <input type="text" class="form-control mb-3" name="designation" value="<%= testimonial.designation %>">
+
+            <label>Company</label>
+            <input type="text" class="form-control mb-3" name="company" value="<%= testimonial.company %>">
+
+            <label>Description</label>
+            <textarea class="form-control mb-3" name="description" rows="4"><%= testimonial.description %></textarea>
+
+            <label>Rating</label>
+            <input type="number" min="1" max="5" class="form-control mb-3" name="rating" value="<%= testimonial.rating %>">
+
+            <label>Current Image</label><br>
+            <img src="/<%= testimonial.img %>" width="100" class="mb-3">
+
+            <label>Change Image</label>
+            <input type="file" class="form-control mb-3" name="img">
+
+            <button class="btn btn-primary">Update</button>
+
+        </form>
+
+    </div>
+</div>
+
+<%- include('footer.ejs'); %>

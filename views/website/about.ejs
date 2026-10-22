@@ -1,0 +1,46 @@
+   <%- include('header') %>
+   <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Turning Ideas Into Reality</h2>
+                <p class="section-desc">Get to know more about my background and what drives me</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="/<%=about.img%>" alt="Alex Rivera" height="800px" width="500px" />
+                    <div class="about-experience-badge">
+                        <span><%=about.experience%>+</span>
+                        Years Experience
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h3><%=about.position%></h3>
+                    <p><%=about.description%>.</p>
+                    <p><%=about.description%>.</p>
+                    <div class="about-info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Name:</span>
+                            <span class="info-value"><p><%=about.name%>.</p></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <span class="info-value"><%=about.email%></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Location:</span>
+                            <span class="info-value"><%=about.location%></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Freelance:</span>
+                            <span class="info-value"><%=about.freelance%></span>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('footer') %>

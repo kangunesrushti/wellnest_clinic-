@@ -1,0 +1,47 @@
+ 
+ <%- include('header') %>
+ <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What Clients Say</h2>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <!-- Testimonial 1 -->
+                     <% for(let i=0;i<data.length;i++) { %>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                              <% for(let a=0;a< data[i].rating ;a++) {%>
+                            <i class="fas fa-star"></i>
+                            <% } %>
+                           
+                        </div>
+                        <p class="testimonial-text">"<%=data[i].description%>"</p>
+                        <div class="testimonial-author">
+                            <img src="/<%=data[i].img%>" alt="Client 1" />
+                            <div class="author-info">
+                                <h4><%=data[i].name%></h4>
+                                <span><%=data[i].designation%></span>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+                
+                <!-- Slider Controls -->
+                <div class="slider-controls">
+                    <button class="slider-btn" id="prevTestimonial"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots" id="testimonialDots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="slider-btn" id="nextTestimonial"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('footer') %>
